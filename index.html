@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>NEWS WEBSITE</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/styel.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<style>
+	.mySlides {display:none;}
+</style>
+<script> 
+	$(document).ready(function(){
+		var values= null;
+		$.ajax({
+
+			async:false,
+			// sequential running
+			url:`https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=784f4f6a24994a21a3fc1842f5c67820`,
+			success: function(data){
+				values =data;
+			}
+		});
+		localStorage.setItem("entertainment",  JSON.stringify(values));
+		// l.s object sv ni kra tha 
+		// local storage me string save huta hy json k object ko string me save krna huta hy is lye stringify use hwa
+		// api  hatai index pe lai local storage me set ki ent js me api hata di binding rakhi local storage s data utha k bind krdya
+	});
+	var slideIndex = 1;
+	showDivs(slideIndex);
+	
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		if (n > x.length) {slideIndex = 1}    
+			if (n < 1) {slideIndex = x.length}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";  
+				}
+				x[slideIndex-1].style.display = "block";  
+			}
+		</script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	</head>
+	<body>
+		<header class="btn btn-link">
+			<div class="logo-wrap">
+				<div class="container">
+					<a href="index.html">
+						<img class="img-fluid" src="img/logo.png" style="height: 20%; width: 30%;">
+					</a>
+				</div>
+
+			</div>
+		</header>
+		<div class="site-main-container">
+			<section class="top-post-area pt-10">	
+				<div class="container no-padding">
+					<div class="w3-content w3-display-container">
+						<a href="entertainment.html"> <img class="mySlides" src="img/top-post1.jpg" style="width:100%;display:block;"></a>
+						<a href="business.html"> <img class="mySlides" src="img/l1.jpg" style="width:100%" > </a>
+						<a href="science.html"><img class="mySlides" src="img/l2.jpg" style="width:100%" > </a>
+						<a href="technology.html"><img class="mySlides" src="img/l3.jpg" style="width:100%" > </a>
+						<a href="sports.html"><img class="mySlides" src="img/top-post2.jpg" style="width:100%" > </a>
+						<a href="health.html"><img class="mySlides" src="img/top-post3.jpg" style="width:100%" > </a>
+
+						<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+						<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+					</div>
+				</div>
+			</section>
+			<section class="latest-post-area pb-120">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-8 post-list">
+							<div class="latest-post-wrap">
+								<h4 class="cat-title">Latest News</h4>
+								<div class="single-latest-post row align-items-center">
+									<div class="col-lg-5 post-left">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/l1.jpg" alt="">
+										</div>
+										
+									</div>
+									<div class="col-lg-5 post-left">
+										A business that makes nothing but money is a poor business.
+										<a href="Business.html" class="btn btn-link">
+											Read more >>
+										</a>
+										
+									</div>
+
+								</div><div class="single-latest-post row align-items-center">
+									<div class="col-lg-5 post-left">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/top-post3.jpg" alt="">
+										</div>
+
+									</div>
+									<div class="col-lg-5 post-left">
+										Without your health, you've got nothing going on.
+										<a href="health.html" class="btn btn-link">
+											Read more >>
+
+										</a>
+									</div>
+
+								</div><div class="single-latest-post row align-items-center">
+									<div class="col-lg-5 post-left">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/top-post1.jpg" alt="">
+										</div>
+
+									</div>
+									<div class="col-lg-5 post-left">
+										The entertainment industry is loaded with extraordinarily talented people. But the true, genuine originals, they're rare.
+										<a href="entertainment.html" class="btn btn-link">
+											Read more >>
+
+										</a>
+									</div>
+
+								</div><div class="single-latest-post row align-items-center">
+									<div class="col-lg-5 post-left">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/top-post2.jpg" alt="">
+										</div>
+
+									</div>
+									<div class="col-lg-5 post-left">
+										Sports do not build character. They reveal it. <a href="sports.html" class="btn btn-link">
+											Read more >>
+
+										</a>
+									</div>
+
+								</div>
+								<div class="single-latest-post row align-items-center">
+									<div class="col-lg-5 post-left">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/l2.jpg" alt="">
+										</div>
+										
+									</div>
+									<div class="col-lg-5 post-left">
+										The science of today is the technology of tomorrow. 
+										<a href="science.html" class="btn btn-link">
+											Read more >>
+
+										</a>
+									</div>
+								</div>
+								<div class="single-latest-post row align-items-center">
+									<div class="col-lg-5 post-left">
+										<div class="feature-img relative">
+											<div class="overlay overlay-bg"></div>
+											<img class="img-fluid" src="img/l3.jpg" alt="">
+										</div>
+
+									</div>
+									<div class="col-lg-5 post-left">
+										Technology is always a two-edged sword. It will bring in many benefits, but also many disasters.
+										<a href="technology.html" class="btn btn-link">
+											Read more >>
+
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer bg-transparent border-success">        <div class="text-center center-block">
+					<a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social"></i></a>
+					<a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social"></i></a>
+					<a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social"></i></a>
+					<a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
+				</div>
+			</div>
+		</div>
+	</section>	
+
+
+</body>
+</html>
