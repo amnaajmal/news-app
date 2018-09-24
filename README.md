@@ -1,6 +1,6 @@
 # news-app
 
-##Project Title
+## Project Title
 My Portfolio
 
 
@@ -8,10 +8,10 @@ My Portfolio
 * visual studio code
 * sublime
 
-##API
+## API
 * newsAPI.org
 
-##languages uses.
+## languages uses.
 * HTML
 * CSS 
 * JAVASCRIPT
