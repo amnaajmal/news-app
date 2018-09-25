@@ -1,7 +1,7 @@
 # news-app
 
 ## Project Title
-My Portfolio
+NEWS WEBSITE
 
 
 ## INSTALLATION
